@@ -1,25 +1,25 @@
 ﻿int RandomNumber()
 {
-
+    return new Random().Next(10, 99);
 }
 
 void Output(int n)
 {
-    int a = n/10;
-    int b = n%10;
-    if (a=b)
+    int a = n / 10;
+    int b = n % 10;
+    if (a == b)
     {
-        Console.WriteLine(&"Числа равны {a}");
+        Console.WriteLine($"Числа равны {a}");
     }
     else
     {
-        if (a>b)
+        if (a > b)
         {
-            Console.WriteLine(&"Наибольшее число {a}");
+            Console.WriteLine($"Наибольшее число {a}");
         }
         else
         {
-            Console.WriteLine(&"Наибольшее число {b}");
+            Console.WriteLine($"Наибольшее число {b}");
         }
     }
 }
