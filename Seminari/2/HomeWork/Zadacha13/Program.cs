@@ -1,7 +1,7 @@
 ﻿int Input()
 {
     Console.WriteLine("Введите число");
-    return Convert.ToInt32(Console.ReadLine());
+    return Math.Abs(Convert.ToInt32(Console.ReadLine()));
 }
 
 void Output(int N)
