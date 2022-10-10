@@ -1,11 +1,48 @@
-﻿int [] Input()
+﻿int InputVisitors() 
 {
-    string interval = console.ReadLine();
-    int i=0;
-    while 
+    return new Random().Next(1,100); 
 }
 
-int [] calculation (int [] array, int [] a)
+string InputTime ()
+{
+    int a = new Random().Next(0,23);
+    int b = new Random().Next(0,23);
+    string result = $"{a}-{b}";
+    if(a==b)
+    {
+        result = $"{a}";
+    }
+    else
+    {
+        if (a>b)
+        {
+            result = $"{b}-{a}";
+        }
+    }
+    return result
+}
+
+int [] Transformation(string a)
+{
+    if(a.Length>2)
+    {
+    string [] s = a.Split('-');
+    int i = Convert.ToInt32(s[1])-Convert.ToInt32(s[0])+1;
+    int [] result = new int [i];
+    for(int j = 0; j<result.Length; j++)
+    {
+        result[i] = Convert.ToInt32(s[0])+j;
+    }
+    }
+    else
+    {
+        int [] array = new int[1];
+        array[0] = Convert.ToInt32(a);
+    }
+    return array;
+}
+
+int [] calculationTime (int [] array, int [] a)
 {
     int i = 0;
     while (i<a.Length)
@@ -16,17 +53,25 @@ int [] calculation (int [] array, int [] a)
     return array;
 }
 
+void Output(int [] array)
+{
+    int max = 0;
+    for(int i=0; i<array.Length; i++)
+    {
+        if(array[i]>max)
+        {
+            max=array[i];
+        }
+    }
+    for(i=0; i<array.Length; i++)
+    {
+        if(array[i]==max)
+        {
+            while()
+        }
+    }
+    }
+}
 
-int [] a = {11, 12, 13};
-int [] b = {10, 11, 12, 13, 14};
-int [] c = {9, 10};
-int [] d = {11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22};
-int [] e = {18};
-int [] f = {0, 1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23};
-int [] g = {4,5};
-int [] h = {4,5};
-int [] i = {4,5};
-int kol = 9;
-int [] time = new int [23]; 
 
 
