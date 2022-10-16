@@ -23,7 +23,7 @@ new Thread(() =>
     Thread.Sleep(500);
     y++;
     if (y > 15) y = 1;
-  }+
+  }
 }).Start();
 
 // Логика проверки нажатия кнопок
@@ -41,9 +41,5 @@ while (true)
     x++;
     Figure(x, y);
   }
-  // if (key == ConsoleKey.upArrow)
-  // {
-  //   ;
-  // }
 
 }
