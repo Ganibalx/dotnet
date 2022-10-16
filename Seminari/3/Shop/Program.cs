@@ -77,7 +77,7 @@ void Output(int[] array)
             q=true;
             while (q)
             {
-                if (array[i + 1] == max)
+                if (i+1 <= array.Length && array[i + 1] == max)
                 {
                     i++;
                     b = i;
@@ -113,6 +113,3 @@ for (int i = 0; i < n; i++)
     time = calculationTime(time, Transformation(InputTime()));
 }
 Output(time);
-
-
-
