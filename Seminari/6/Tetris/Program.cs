@@ -41,16 +41,35 @@ void Output(char[,] array) // Вывод на экран
     Console.WriteLine();
   }      
 }
+char[,] DrawingTheSquare(char[,] array, int x, int y) // логика квадрата
+{
+  for(int i = x; i<=x+1; i++)
+  {
+    for(int j = y; j<=y+1; j++)
+    {
+      array[i,j]= '#';
+    }       
+  }    
+  return array;
+}
 
 char[,] field = new char[15,20];
-Frame(FieldRendering(field));
+int x = 0;
+int y = 9;
+int [] a = {x,y};
+int [] b = {x,y+1};
+int [] c = {x+1,y};
+int [] d = {x+1,y+1};
+
 new Thread(() =>
 {
   while (true)
   {
     Console.Clear();
-    Output(field);
+    field= DrawingTheSquare(Frame(FieldRendering(field)), x, y);
+    Output(field);   
     Console.CursorVisible = false;
-    Thread.Sleep(500);    
+    Thread.Sleep(500);
+    x ++;    
   }
 }).Start();
