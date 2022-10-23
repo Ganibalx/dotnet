@@ -57,4 +57,4 @@ int Output(int[]array)
 
 int [] array = Conversion(input());
 Console.WriteLine(string.Join(' ', array));
-Console.WriteLine($"Чисел бюольше 0 {Output(array)}");
+Console.WriteLine($"Чисел больше 0 {Output(array)}");
