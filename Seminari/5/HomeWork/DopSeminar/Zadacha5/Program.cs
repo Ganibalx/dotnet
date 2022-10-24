@@ -1,4 +1,4 @@
-﻿int inputN(string a) // ввод числа с проверкой
+﻿int inputN(string a)
 {
     bool flag = false;
     int i=0;
@@ -9,34 +9,38 @@
     }
     return Math.Abs(i);
 }
-int [] Calculation(int[] array) //основной расчет
-{       
+bool Calculation(int[] array, int a)
+{    
+    bool result=false;
     for (int i = 0; i < array.Length; i++)
     {
-        array[i]*= -1;        
+        if(array[i]==a) result = true;        
     }    
-    return array;
+    return result;
 }
-int[] NewArray(int n) // заполнение одномерного массива заданной размерности
+int[] NewArray(int n)
 {
     int[] array = new int[n];
     for (int i = 0; i < n; i++)
     {
-        array[i] = new Random().Next(-50,51);
+        array[i] = new Random().Next(0,50);
     }
     return array;
 }
-
+void print(string a)
+{
+    Console.WriteLine(a);
+}
 void printarray(int[] array)
 {
     for(int i=0; i<array.Length; i++)
     {
-        Console.Write($"{array[i]}\t");
+        Console.Write($"{array[i]} ");
     }
     Console.WriteLine();
 }
 
 int [] array = NewArray(inputN("Введите кол-во элементов массива: "));
 printarray(array);
-array = Calculation(array);
-printarray(array);
+if(Calculation(array, inputN("Введите число для поиска: "))) print("Данный элемент есть");
+else print("Данного элемента нет");
