@@ -1,7 +1,8 @@
-﻿ string a = "4-6";
+﻿ string a = "4";
 Console.WriteLine(a.Length);
 
-//  string[] s = a.Split('-');
+ string[] s = a.Split(',');
+ Console.WriteLine(s.Length);
 //  int i = Convert.ToInt32(s[1]) - Convert.ToInt32(s[0]) + 1;
 //  Console.WriteLine(i); 
 
