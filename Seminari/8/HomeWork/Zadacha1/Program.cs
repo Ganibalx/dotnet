@@ -52,7 +52,7 @@ void OutputString(int [] array)
         }
         Console.WriteLine(result);        
         summ =0;
-        for(int i = 0; i<array.Length; i++)
+        for(int i = 0; i<array.Length; i++) 
         {
             summ+=array[i];
         }
