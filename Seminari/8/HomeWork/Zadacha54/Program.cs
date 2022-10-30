@@ -7,28 +7,22 @@
     return result;
 }
 
-int Sorting(int[,] a)
+int[,] Sorting(int[,] a)
 {
-    int result = 0;
-    int min=0;
-    for (int k = 0; k<a.GetLength(1); k++) min += a[0,k];   
-    int summ = 0;
-    for (int i = 1; i<a.GetLength(0); i++)
+    int per = 0;
+    for (int i = 0; i<a.GetLength(0); i++)
+    for (int j = 0; j<a.GetLength(1); j++)
+    for (int k = 0; k<a.GetLength(1)-1; k++)
+    if (a[i, k] < a[i, k+1])
     {
-        for (int j = 0; j<a.GetLength(1); j++)
-        {
-            summ += a[i,j];
-        }
-        if(summ<min)
-        {
-            min=summ;
-            result=i;
-        }
+        per=a[i, k];
+        a[i, k]=a[i, k+1];
+        a[i, k+1]=per;
     }
-    return result;
+    return a;
 }
 
-void Print_arr(int[,] a)
+void Print(int[,] a)
 {
     for (int i = 0; i<a.GetLength(0); i++)
     {
@@ -40,12 +34,7 @@ void Print_arr(int[,] a)
     }
 }
 
-void Print(int a)
-{
-    Console.WriteLine($"Минимальная сумма элементов строке {a}");
-}
-
 int[,] array = FillingArray(5, 5);
-Print_arr(array);
+Print(array);
 Console.WriteLine();
 Print(Sorting(array));
