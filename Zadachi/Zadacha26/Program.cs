@@ -22,7 +22,7 @@ int Calculation(int a, int b)
 
 void Output(int a, int b, int result)
 {
-    Console.WriteLine($"{a}, {b} -> {result}");
+    Console.WriteLine($"{a}^{b} -> {result}");
 }
 
 int a = Input ("Введите возводимое число");
