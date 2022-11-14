@@ -1,6 +1,6 @@
 ﻿int input()
 {
-    return Convert.ToInt32(Console.Readline());
+    return Convert.ToInt32(Console.ReadLine());
 }
 
 int [] Filling (int n)
